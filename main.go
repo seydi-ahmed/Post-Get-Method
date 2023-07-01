@@ -16,7 +16,7 @@ func abc(w http.ResponseWriter, r *http.Request) {
 	case "GET":
 		http.ServeFile(w, r, "index.html")
 	case "POST":
-		if err := r.ParseForm(); r != nil {
+		if err := r.ParseForm(); err != nil {
 			fmt.Fprintf(w, "ParseForm() err : %v", err)
 			return
 		}
